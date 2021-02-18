@@ -11,6 +11,7 @@ def redraft(file):
     df = pd.read_excel(file) #Read the excel file in as a dataframe
     df = df.sort_values(by=['Draft Class','WS'], ascending=False, ignore_index=True) #Sort by Draft Class & Prime Wins
     counts = df['Draft Class'].value_counts()
+    counts = counts.sort_index(ascending = False)
     print(counts)
     
     redraft = []
